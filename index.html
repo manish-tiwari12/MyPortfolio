@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manish Tiwari - Web & Python Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Particle Background -->
+    <div id="particles-js" class="fixed inset-0 z-0"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-900/80 backdrop-blur-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold">MT</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-blue-400 hover:text-blue-300 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+                    <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden" id="menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative z-10">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col-reverse md:flex-row items-center gap-12">
+                <!-- Left Side - Animated Text -->
+                <div class="w-full md:w-1/2 text-center md:text-left">
+                    <div class="overflow-hidden">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 opacity-2" id="hero-title">
+                            I am Manish Tiwari
+                        </h1>
+                    </div>
+                    <div class="overflow-hidden">
+                        <h2 class="text-2xl md:text-4xl text-blue-400 mb-8 opacity-2" id="hero-subtitle">
+                            And I am a Frontend Web Developer
+                        </h2>
+                    </div>
+                    <div class="overflow-hidden">
+                        <p class="text-xl text-gray-300 mb-8 opacity-2" id="hero-text">
+                            I love building interactive and functional web applications. Currently pursuing BCA and passionate about creating innovative solutions.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start opacity-2" id="hero-buttons">
+                        <a href="#contect" class="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-lg transition-colors">Contact Me</a>
+                        <a href="https://github.com/manish-tiwari12?tab=repositories" class="border border-blue-500 hover:bg-blue-500 px-8 py-3 rounded-lg transition-colors">View Projects</a>
+                    </div>
+                </div>
+                
+                <!-- Right Side - Profile Image -->
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="relative" id="hero-image">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl bg-gray-800 flex items-center justify-center">
+                            <!-- Try multiple image sources with fallbacks -->
+                            <img 
+                                src="images/profile-new.jpg" 
+                                alt="Manish Tiwari" 
+                                class="w-full h-full object-cover"
+                                onerror="console.log('Image failed to load: images/profile-new.jpg'); this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzFmMjkzNyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDgiIGZpbGw9IiMzYjgyZjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5NVDwvdGV4dD48L3N2Zz4=';"
+                            >
+                            <!-- Fallback text that will show if both images fail -->
+                            <span class="text-4xl font-bold text-blue-500 absolute" id="fallback-text" style="display: none;">MT</span>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-code text-3xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center reveal-text">About Me</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg text-gray-300 mb-6 reveal-text">
+                    I'm a passionate software developer with a keen eye for detail and a love for creating efficient, scalable solutions. 
+                    With expertise in modern web technologies, I strive to build applications that not only meet but exceed user expectations.
+                </p>
+                <p class="text-lg text-gray-300 reveal-text">
+                    When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
+                    or sharing my knowledge through technical writing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center reveal-text">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="skill-card">
+                    <i class="fab fa-html5 text-4xl text-orange-500"></i>
+                    <h3 class="mt-4">HTML5</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
+                    <h3 class="mt-4">CSS3</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js text-4xl text-yellow-500"></i>
+                    <h3 class="mt-4">JavaScript</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-react text-4xl text-cyan-500"></i>
+                    <h3 class="mt-4">React</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-node-js text-4xl text-green-500"></i>
+                    <h3 class="mt-4">Node.js</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-python text-4xl text-blue-400"></i>
+                    <h3 class="mt-4">Python</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database text-4xl text-purple-500"></i>
+                    <h3 class="mt-4">SQL</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-git-alt text-4xl text-red-500"></i>
+                    <h3 class="mt-4">Git</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-800">
+
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center reveal-text">Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <img src="images/html_css.png" alt="Project 1" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-300 mb-4">Here are some of my web development projects built using HTML, CSS, and JavaScript.  stylish design, and interactive functionality. each project showcases my skills and creativity. Click and see my projects to explore how I bring ideas to life through code.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/manish-tiwari12?tab=repositories" class="text-blue-400 hover:text-blue-300"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/manish-tiwari12" class="text-blue-400 hover:text-blue-300"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <img src="images/todo.png" alt="Project 2" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+                        <p class="text-gray-300 mb-4">A collaborative task management application with real-time updates</p>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/manish-tiwari12/To_Do-App" class="text-blue-400 hover:text-blue-300"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/manish-tiwari12" class="text-blue-400 hover:text-blue-300"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <img src="images/python.jpg" alt="Project 3" class="w-full h-48 object-cover rounded-t-lg ">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Pyhton Projects.</h3>
+                        <p class="text-gray-300 mb-4">Here are some of my Python projects. They are all created with passion and dedication. Click and see my projects to explore what I’ve built using Python. Each project reflects my learning journey and problem-solving skills.
+
+ </p>
+                            <a href="https://github.com/manish-tiwari12?tab=repositories" class="text-blue-400 hover:text-blue-300"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/manish-tiwari12" class="text-blue-400 hover:text-blue-300"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center reveal-text">Get In Touch</h2>
+            <div class="max-w-2xl mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:border-blue-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:border-blue-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:border-blue-500 focus:outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg transition-colors">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-8 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold mb-4">Manish Tiwari</h3>
+                    <p class="text-gray-400">Web & Python Developer</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-xl font-bold mb-4">Connect</h3>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://github.com/manish-tiwari12" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/manishtiwari0_/" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <p class="text-gray-400"><i class="fas fa-envelope mr-2"></i>Contact @manishtiwari.com</p>
+                    <p class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i>Ratanpur, Bilaspur</p>
+                    <p class="text-gray-400"><i class="fab fa-whatsapp"></i> 7489859812</p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p>&copy; 2025 Manish Tiwari. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
